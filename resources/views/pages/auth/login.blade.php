@@ -162,7 +162,7 @@
                 <div class="z-1 flex items-center justify-center">
                     <div class="flex max-w-sm flex-col items-center">
                         <a href="/" class="mb-4 block">
-                            <img src="./images/logo/logo.png" alt="Logo" class="w-56" />
+                            <img src="./images/logo/logo.png" alt="Logo" class="w-80" />
                         </a>
                         <p class="text-center text-gray-500 dark:text-white/60">
                             Track your income, manage expenses, and plan your financial future with a simple yet powerful
