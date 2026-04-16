@@ -65,13 +65,12 @@
         'justify-start'">
         <a href="/">
             <img x-show="$store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen"
-                class="dark:hidden" src="/images/logo/logo.svg" alt="Logo" width="150" height="40" />
+                class="dark:hidden" src="/images/logo/logo.png" alt="Logo" width="170"/>
             <img x-show="$store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen"
-                class="hidden dark:block" src="/images/logo/logo-dark.svg" alt="Logo" width="150"
+                class="hidden dark:block" src="/images/logo/logo.png" alt="Logo" width="170"
                 height="40" />
             <img x-show="!$store.sidebar.isExpanded && !$store.sidebar.isHovered && !$store.sidebar.isMobileOpen"
-                src="/images/logo/logo-icon.svg" alt="Logo" width="32" height="32" />
-
+                src="/images/logo/logo-icon.png" alt="Logo" width="32" height="32" />
         </a>
     </div>
 
@@ -136,7 +135,7 @@
                                             <svg x-show="$store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen"
                                                 class="ml-auto w-5 h-5 transition-transform duration-200"
                                                 :class="{
-                                                    'rotate-180 text-brand-500': isSubmenuOpen({{ $groupIndex }},
+                                                    'rotate-180 text-main': isSubmenuOpen({{ $groupIndex }},
                                                         {{ $itemIndex }})
                                                 }"
                                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -202,7 +201,7 @@
                                                 {{ $item['name'] }}
                                                 @if (!empty($item['new']))
                                                     <span
-                                                        class="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-brand-500 text-white">
+                                                        class="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-main text-white">
                                                         new
                                                     </span>
                                                 @endif
