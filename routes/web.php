@@ -2,10 +2,18 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Transaction\CategoryController;
+use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\LandingController;
+use App\Http\Controllers\Investment\InvesmentController;
+use App\Http\Controllers\Landing\LandingController;
+use App\Http\Controllers\User\ProfileControlller;
+use App\Http\Controllers\Report\ReportController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\User\SettingsController;
+use App\Http\Controllers\Transaction\ExpenseController;
+use App\Http\Controllers\Transaction\IncomeController;
+use App\Http\Controllers\Transaction\TransferController;
 
 // // dashboard pages
 // Route::get('/', function () {
@@ -18,9 +26,9 @@ Route::get('/calendar', function () {
 })->name('calendar');
 
 // profile pages
-Route::get('/profile', function () {
-    return view('pages.profile', ['title' => 'Profile']);
-})->name('profile');
+// Route::get('/profile', function () {
+//     return view('pages.profile', ['title' => 'Profile']);
+// })->name('profile');
 
 // form pages
 Route::get('/form-elements', function () {
@@ -36,11 +44,6 @@ Route::get('/basic-tables', function () {
 Route::get('/blank', function () {
     return view('pages.blank', ['title' => 'Blank']);
 })->name('blank');
-
-// error pages
-Route::get('/error-404', function () {
-    return view('pages.errors.error-404', ['title' => 'Error 404']);
-})->name('error-404');
 
 // // chart pages
 // Route::get('/line-chart', function () {
@@ -101,7 +104,24 @@ Route::middleware(['guest'])->group(function(){
     Route::get('/reset-password', [ResetPasswordController::class, 'index'])->name('reset-password');
 });
 
-// Dashboard
 Route::middleware(['auth'])->group(function(){
+    // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Transaction
+    Route::get('/income', [IncomeController::class, 'index'])->name('income');
+    Route::get('/expense', [ExpenseController::class, 'index'])->name('expense');
+    Route::get('/transfer', [TransferController::class, 'index'])->name('transfer');
+    Route::get('/category', [CategoryController::class, 'index'])->name('category');
+    
+    // Investment
+    Route::get('/investment', [InvesmentController::class, 'index'])->name('investment');
+
+    // Report
+    Route::get('/report', [ReportController::class, 'index'])->name('report');
+
+
+    // User
+    Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
+    Route::get('/profile', [ProfileControlller::class, 'index'])->name('profile');
 });
