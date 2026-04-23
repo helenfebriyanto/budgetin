@@ -47,12 +47,14 @@
   --color-white: #ffffff;
   --color-black: #101828;
 
-  --color-main: #054990;
-  --color-main-hover: #0B5DB2;
+  --color-main: #097AEC;
+  --color-main-hover: #1385F6;
+  --color-main-soft: #E6F0FD;
   --color-second: #3F7CB2;
   --color-third: #81A4CC;
   --color-fourth: #DBE3EE;
-  --color-accent: #F17400;
+  --color-accent: #FF810A;
+  --color-accent-hover: #FF8B1F;
 
   --color-dark: #0F2A44;
   --color-dark-hover: #123A63;
@@ -208,7 +210,7 @@
 }
 
 @utility menu-item-active {
-  @apply bg-fourth text-main dark:bg-brand-500/[0.12] dark:text-third;
+  @apply bg-main-soft text-main dark:bg-brand-500/[0.12] dark:text-main;
 }
 
 @utility menu-item-inactive {
@@ -220,7 +222,7 @@
 }
 
 @utility menu-item-icon-active {
-  @apply text-main dark:text-third;
+  @apply text-main dark:text-main;
 }
 
 @utility menu-item-icon-inactive {
@@ -232,7 +234,7 @@
 }
 
 @utility menu-item-arrow-active {
-  @apply rotate-180 text-main dark:text-third;
+  @apply rotate-180 text-main dark:text-main;
 }
 
 @utility menu-item-arrow-inactive {
@@ -244,7 +246,7 @@
 }
 
 @utility menu-dropdown-item-active {
-  @apply bg-fourth text-main dark:bg-brand-500/[0.12] dark:text-third;
+  @apply bg-main-soft text-main dark:bg-brand-500/[0.12] dark:text-main;
 }
 
 @utility menu-dropdown-item-inactive {
@@ -256,7 +258,7 @@
 }
 
 @utility menu-dropdown-item-active {
-  @apply bg-fourth text-main dark:bg-brand-500/[0.12] dark:text-third;
+  @apply bg-main-soft text-main dark:bg-brand-500/[0.12] dark:text-main;
 }
 
 @utility menu-dropdown-item-inactive {
@@ -877,4 +879,64 @@ pre[class*='language-'] {
   .flatpickr-calendar.static {
     margin-right: -60px !important;
   }
+}
+
+.custom-delete-btn {
+  @apply inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-error-500 px-4 py-3 text-theme-sm font-medium text-white shadow-theme-xs hover:bg-error-600 hover:text-white/90 dark:border-gray-600 dark:bg-error-500 dark:text-white dark:hover:bg-error-600 dark:hover:text-white/90;
+}
+
+.custom-cancel-btn {
+  @apply inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-gray-500 px-4 py-3 text-theme-sm font-medium text-white shadow-theme-xs hover:bg-gray-600 hover:text-white/90 dark:border-gray-600 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 dark:hover:text-white/90;
+}
+
+.custom-popup {
+  @apply rounded-3xl;
+}
+
+.dark .custom-popup {
+  background-color: #0E1928 !important;
+}
+
+.swal2-title {
+  @apply text-black dark:text-white/90;
+}
+
+.swal2-container {
+  @apply !bg-gray-400/50 backdrop-blur-[32px];
+}
+
+/* .swal2-popup,
+.swal2-backdrop-show {
+  animation: none !important;
+  transition: none !important;
+} */
+
+@keyframes my-swal-show {
+  0% {
+    transform: translate3d(0, -50px, 0) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+.my-popup {
+  animation: my-swal-show 0.3s ease;
+}
+
+@keyframes my-swal-hide {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, -30px, 0) scale(0.9);
+    opacity: 0;
+  }
+}
+
+.my-popup.hide {
+  animation: my-swal-hide 0.2s ease forwards;
 }

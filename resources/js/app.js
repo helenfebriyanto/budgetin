@@ -8,12 +8,18 @@ import 'flatpickr/dist/flatpickr.min.css';
 // FullCalendar
 import { Calendar } from '@fullcalendar/core';
 
+import { createIcons, icons } from 'lucide';
+
 
 
 window.Alpine = Alpine;
 window.ApexCharts = ApexCharts;
 window.flatpickr = flatpickr;
 window.FullCalendar = Calendar;
+window.createIcons = () => createIcons({ icons });;
+
+// initial render
+window.createIcons();
 
 Alpine.start();
 
