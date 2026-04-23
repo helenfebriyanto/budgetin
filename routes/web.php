@@ -64,29 +64,29 @@ Route::get('/blank', function () {
 // })->name('signup');
 
 // // ui elements pages
-// Route::get('/alerts', function () {
-//     return view('pages.ui-elements.alerts', ['title' => 'Alerts']);
-// })->name('alerts');
+Route::get('/alerts', function () {
+    return view('pages.ui-elements.alerts', ['title' => 'Alerts']);
+})->name('alerts');
 
-// Route::get('/avatars', function () {
-//     return view('pages.ui-elements.avatars', ['title' => 'Avatars']);
-// })->name('avatars');
+Route::get('/avatars', function () {
+    return view('pages.ui-elements.avatars', ['title' => 'Avatars']);
+})->name('avatars');
 
-// Route::get('/badge', function () {
-//     return view('pages.ui-elements.badges', ['title' => 'Badges']);
-// })->name('badges');
+Route::get('/badge', function () {
+    return view('pages.ui-elements.badges', ['title' => 'Badges']);
+})->name('badges');
 
-// Route::get('/buttons', function () {
-//     return view('pages.ui-elements.buttons', ['title' => 'Buttons']);
-// })->name('buttons');
+Route::get('/buttons', function () {
+    return view('pages.ui-elements.buttons', ['title' => 'Buttons']);
+})->name('buttons');
 
-// Route::get('/image', function () {
-//     return view('pages.ui-elements.images', ['title' => 'Images']);
-// })->name('images');
+Route::get('/image', function () {
+    return view('pages.ui-elements.images', ['title' => 'Images']);
+})->name('images');
 
-// Route::get('/videos', function () {
-//     return view('pages.ui-elements.videos', ['title' => 'Videos']);
-// })->name('videos');
+Route::get('/videos', function () {
+    return view('pages.ui-elements.videos', ['title' => 'Videos']);
+})->name('videos');
 
 // Landing Page
 Route::get('/logout', [LoginController::class, 'destroy'])->name('logout');
